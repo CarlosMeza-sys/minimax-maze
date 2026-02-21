@@ -25,8 +25,16 @@ Para ver la simulación en acción, los pasos son muy sencillos:
 ``` bash
 python minimax_lab.py
 ```
+> **Nota:** Dependiendo de tu configuración, es posible que necesites usar el comando `python3` en lugar de `python`.
 3. **Fase de Desorientación:** El programa ejecutará automáticamente los primeros 30 turnos, donde verás al ratón moviéndose de forma completamente aleatoria por el tablero.
 4. **Fase Inteligente:** A partir del turno 31, la simulación se volverá interactiva. Solo necesitas presionar la tecla `Enter` para avanzar turno a turno. Podrás observar cómo cada agente toma decisiones calculadas hasta que se agoten los 50 turnos de esta fase o el gato logre su captura.
+
+---
+
+## 🚧 Reto del Proyecto: Desastres y Aciertos
+
+* **Lo que fue un desastre (El "Falso Bug"):** Al implementar el algoritmo y ejecutar el programa, noté que a veces el gato tomaba movimientos que lo alejaban del ratón, y el ratón movimientos que lo acercaban al gato. En principio parecía totalmente contraproducente y pensé que la lógica estaba rota. Tras investigar, descubrí que no era un error, sino el fruto de la aleatoriedad. El programa barajaba las coordenadas que tenían exactamente el mismo valor heurístico y elegía una al azar (`random.shuffle`) para evitar ser predecible. Entender que un movimiento errático era en realidad la IA rompiendo un empate matemático fue un gran alivio.
+* **Lo que funcionó a la perfección:** La lógica de colisión en el método de verificación. Fue el punto más sólido y fácil de entender a nivel lógico en todo el proceso. Simplemente comparar si las posiciones de ambos agentes coinciden en la matriz para retornar un booleano verdadero o falso. Funcionó de maravilla desde el primer intento.
 
 ---
 
